@@ -15,9 +15,10 @@
  */
 
 using System;
+using System.Collections;
 using System.Globalization;
 using System.Speech.Recognition;
-using VoiceRecognition.Properties;
+using Link.CS.Example.VoiceRecognition.Properties;
 
 namespace VoiceRecognition
 {
@@ -28,22 +29,26 @@ namespace VoiceRecognition
 
         public SpeechManager()
         {
-            speechRecognitionEngine = new SpeechRecognitionEngine(CultureInfo.CurrentCulture);
-            
+            speechRecognitionEngine = new SpeechRecognitionEngine();
+
             speechRecognitionEngine.LoadGrammar(GetGrammar());
             speechRecognitionEngine.SpeechRecognized += RaiseCommandRecognizedEvent;
+            speechRecognitionEngine.SetInputToDefaultAudioDevice();
+            speechRecognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
         }
 
         private Grammar GetGrammar()
         {
             var choices = new Choices();
-            choices.Add(Resources.VoiceRecognitionStart, Resources.VoiceRecognitionStop, Resources.VoiceRecognitionDo);
+            var resourceSet = Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, createIfNotExists:true, tryParents:true);
+            foreach (DictionaryEntry resource in resourceSet)
+            {
+                var resourceValue = resource.Value as string;
+                choices.Add(resourceValue);
+            }
 
-            var gb = new GrammarBuilder();
-            gb.Append(choices);
-            gb.Culture = CultureInfo.CurrentUICulture;
-
-            return new Grammar(gb);
+            var grammarBuilder = new GrammarBuilder(choices);
+            return new Grammar(grammarBuilder);
         }
 
         private void RaiseCommandRecognizedEvent(object sender, SpeechRecognizedEventArgs args)

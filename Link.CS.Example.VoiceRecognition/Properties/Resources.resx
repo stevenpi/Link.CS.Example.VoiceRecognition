@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="VoiceRecognitionDo" xml:space="preserve">
-    <value>Do</value>
+  <data name="VoiceCommand_HelloWorld" xml:space="preserve">
+    <value>Hello World</value>
   </data>
-  <data name="VoiceRecognitionStart" xml:space="preserve">
+  <data name="VoiceCommand_Start" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="VoiceRecognitionStop" xml:space="preserve">
+  <data name="VoiceCommand_Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
 </root>

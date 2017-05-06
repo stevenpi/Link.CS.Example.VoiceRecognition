@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VoiceRecognition.Properties {
+namespace Link.CS.Example.VoiceRecognition.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace VoiceRecognition.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VoiceRecognition.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Link.CS.Example.VoiceRecognition.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,29 @@ namespace VoiceRecognition.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do.
+        ///   Looks up a localized string similar to Hello World.
         /// </summary>
-        internal static string VoiceRecognitionDo {
+        internal static string VoiceCommand_HelloWorld {
             get {
-                return ResourceManager.GetString("VoiceRecognitionDo", resourceCulture);
+                return ResourceManager.GetString("VoiceCommand_HelloWorld", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
-        internal static string VoiceRecognitionStart {
+        internal static string VoiceCommand_Start {
             get {
-                return ResourceManager.GetString("VoiceRecognitionStart", resourceCulture);
+                return ResourceManager.GetString("VoiceCommand_Start", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Stop.
         /// </summary>
-        internal static string VoiceRecognitionStop {
+        internal static string VoiceCommand_Stop {
             get {
-                return ResourceManager.GetString("VoiceRecognitionStop", resourceCulture);
+                return ResourceManager.GetString("VoiceCommand_Stop", resourceCulture);
             }
         }
     }
